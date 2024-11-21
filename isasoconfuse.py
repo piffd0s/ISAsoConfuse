@@ -2,7 +2,7 @@ import struct
 import sys
 from keystone import Ks, KS_ARCH_X86, KS_MODE_64
 
-def inject_avx512(binary_path, output_path, avx512_code):
+def isasoconfuse(binary_path, output_path, avx512_code):
     """
     Inject AVX-512 instructions into the beginning of a binary.
     """
@@ -33,7 +33,7 @@ def inject_avx512(binary_path, output_path, avx512_code):
 
 def main():
     if len(sys.argv) != 3:
-        print("Usage: python inject_avx512.py <input_binary> <output_binary>")
+        print("Usage: python isasoconfuse.py <input_binary> <output_binary>")
         return
 
     binary_path = sys.argv[1]
@@ -47,7 +47,7 @@ def main():
         ret
     """
 
-    inject_avx512(binary_path, output_path, avx512_code)
+    isasoconfuse(binary_path, output_path, avx512_code)
 
 if __name__ == "__main__":
     main()
